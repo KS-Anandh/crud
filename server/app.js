@@ -6,6 +6,10 @@ const app=express()
 app.use(cors())
 app.use(express.json())
 app.use("/student",studentRoute)
+app.get("/", async (req, res) => {
+    res.send("Api Running on vercel");
+})
+
 mongoose.connect("mongodb+srv://KS-Anandh:Nandha1432@cluster0.4rkke6i.mongodb.net/studentInfo?retryWrites=true&w=majority&appName=Cluster0")
 .then(()=>{
     console.log("Database Connected...")
